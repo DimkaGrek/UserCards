@@ -9,6 +9,9 @@ module.exports = {
         'my-fiolet': '#5736A3',
         'my-menu-hover': '#7358b1',
       },
+      fontFamily: {
+        sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+      },
     },
   },
   plugins: [require('daisyui')],

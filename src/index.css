@@ -3,12 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  html {
     @apply bg-my-bg-main min-h-screen;
-    /* Інші стилі для body */
+  }
+
+  body {
+    @apply bg-my-bg-main min-h-screen pb-4;
   }
 }
 
-.colors {
+/* .colors {
   color: #b294f7;
-}
+} */

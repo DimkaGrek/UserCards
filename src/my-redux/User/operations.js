@@ -42,3 +42,17 @@ export const checkLastPage = createAsyncThunk(
     }
   }
 );
+
+export const getTweetsByUser = createAsyncThunk(
+  'users/getTweets',
+  async (id, thunkAPI) => {
+    try {
+      //   console.log('params: ->>>', params);
+      const { data } = await api.get(`/users/${id}/tweets`);
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

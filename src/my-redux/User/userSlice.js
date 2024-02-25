@@ -1,8 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { changeUser, checkLastPage, getUsers } from './operations';
+import {
+  changeUser,
+  checkLastPage,
+  getTweetsByUser,
+  getUsers,
+} from './operations';
 
 const initialState = {
   users: [],
+  tweets: {},
   following: [],
   page: 1,
   limit: 3,
@@ -43,10 +49,21 @@ const userSlice = createSlice({
           }
           return item;
         });
+      })
+      .addCase(getTweetsByUser.fulfilled, (state, { payload }) => {
+        console.log('action.payload in getTweets: ', payload[0].userId);
+        // state.users.map(item => console.log(item.id));
+        const userName = state.users.filter(
+          user => user.id === payload[0].userId
+        )[0].user;
+        // const userProxy = new Proxy(Array.from(user), {});
+        state.tweets[userName] = payload;
+        console.log('userName: ', userName);
       });
   },
   selectors: {
     selectUsers: state => state.users,
+    selectTweets: state => state.tweets,
     selectFollowing: state => state.following,
     selectPage: state => state.page,
     selectLimit: state => state.limit,
@@ -65,4 +82,5 @@ export const {
   selectLimit,
   selectIsAll,
   selectFilter,
+  selectTweets,
 } = userSlice.selectors;

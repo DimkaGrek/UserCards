@@ -1,7 +1,5 @@
 import imgBigElement from '../../assets/images/big-element.png';
 import imgGoitLogo from '../../assets/images/goit-logo.png';
-import imgLine from '../../assets/images/line.png';
-import imgAvatar from '../../assets/images/avatar_temp.png';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   addToFollowing,
@@ -9,6 +7,7 @@ import {
   selectFollowing,
 } from 'my-redux/User/userSlice';
 import { changeUser } from 'my-redux/User/operations';
+import { ReactComponent as CircleSvg } from '../../assets/images/circle.svg';
 
 export const Card = ({ user }) => {
   const following = useSelector(selectFollowing);
@@ -25,7 +24,7 @@ export const Card = ({ user }) => {
   };
 
   return (
-    <div className="mx-auto w-[380px] h-[460px] rounded-[20px] bg-[linear-gradient(142deg,_#471ca9_0%,_#5736a3_69.1%,_#4b2a99_100%)] shadow-[-3px_7px_21px_0_rgba(0,0,0,0.23)] relative flex flex-col justify-between items-center">
+    <div className="mx-auto w-[380px] h-[460px] rounded-[20px] bg-[linear-gradient(142deg,_#471ca9_0%,_#5736a3_69.1%,_#4b2a99_100%)] shadow-[-3px_7px_21px_0_rgba(0,0,0,0.23)] relative flex flex-col justify-between items-center userCard">
       <img
         className="w-[76px] h-[22px] absolute top-5 left-5"
         src={imgGoitLogo}
@@ -37,15 +36,13 @@ export const Card = ({ user }) => {
         alt="big element"
       />
       <img
-        className="w-[380px] h-[8px] absolute top-[214px] left-0"
-        src={imgLine}
-        alt="line"
+        src={`/UserCards/images/${user.avatar}`}
+        alt="Avatar"
+        className="w-[63px] h-[63px] rounded-full top-[194px] absolute"
       />
-      <img
-        className="w-[80px] h-[80px] absolute top-[178px] left-[150px]"
-        src={imgAvatar}
-        alt="avatar"
-      />
+
+      <CircleSvg className="circle"></CircleSvg>
+
       <p className="font-sans mt-auto text-[20px] font-medium uppercase text-my-white">
         {user.tweets} tweets
       </p>

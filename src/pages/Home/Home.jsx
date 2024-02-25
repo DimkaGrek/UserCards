@@ -67,7 +67,7 @@ const Home = () => {
       )}
       {users.length !== 0 && showLoadMore && (
         <div className="flex justify-center mt-8">
-          <button onClick={() => getMoreUsers()} className="btn btn-wide">
+          <button onClick={getMoreUsers} className="btn btn-wide">
             Load More
           </button>
         </div>

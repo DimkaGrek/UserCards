@@ -12,6 +12,32 @@
   }
 }
 
-/* .colors {
-  color: #b294f7;
-} */
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.userCard::before,
+.userCard::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 152px;
+  height: 8px; /* висота лінії */
+  background-color: #ebd8ff; /* колір лінії */
+  box-shadow: inset 0 3px 3px 0 #fbf8ff, 0 3px 3px 0 rgba(0, 0, 0, 0.06),
+    inset 0 -2px 3px 0 #ae7be3;
+}
+
+.userCard::before {
+  top: 222px;
+}
+
+.userCard::after {
+  top: 222px;
+  left: 228px;
+}

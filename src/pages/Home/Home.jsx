@@ -21,6 +21,7 @@ const Home = () => {
 
   useEffect(() => {
     getMoreUsers();
+    // eslint-disable-next-line
   }, []);
 
   // useEffect(() => {

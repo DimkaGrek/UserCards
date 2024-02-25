@@ -22,6 +22,13 @@ using the mockapi.io service.
   in local storage using Redux Persist.
 - Filtering cards by "Follow" or "Following" status.
 
+## Additional Information
+
+- The project features responsive design, and user cards are displayed using a
+  grid layout that adjusts correctly on different screen sizes.
+- On the mobile version, the header menu "Home" and "Tweets" transforms into a
+  "burger" menu for better user experience.
+
 ## Technologies Used
 
 - React: for creating the user interface and components.

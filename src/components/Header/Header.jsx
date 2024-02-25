@@ -1,5 +1,5 @@
 import { changeFilter, selectFilter } from 'my-redux/User/userSlice';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 

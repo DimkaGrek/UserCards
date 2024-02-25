@@ -28,6 +28,7 @@ using the mockapi.io service.
   grid layout that adjusts correctly on different screen sizes.
 - On the mobile version, the header menu "Home" and "Tweets" transforms into a
   "burger" menu for better user experience.
+- Separate page `/tweets` where users' tweets are displayed.
 
 ## Technologies Used
 

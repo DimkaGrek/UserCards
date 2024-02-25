@@ -21,7 +21,6 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addToFollowing: (state, action) => {
-      console.log('following in action: ', Array.from(state.following));
       state.following.push(action.payload);
     },
     deleteFromFollowing: (state, action) => {
@@ -51,14 +50,10 @@ const userSlice = createSlice({
         });
       })
       .addCase(getTweetsByUser.fulfilled, (state, { payload }) => {
-        console.log('action.payload in getTweets: ', payload[0].userId);
-        // state.users.map(item => console.log(item.id));
         const userName = state.users.filter(
           user => user.id === payload[0].userId
         )[0].user;
-        // const userProxy = new Proxy(Array.from(user), {});
         state.tweets[userName] = payload;
-        console.log('userName: ', userName);
       });
   },
   selectors: {

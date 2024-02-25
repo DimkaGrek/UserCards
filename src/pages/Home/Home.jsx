@@ -14,25 +14,10 @@ const Home = () => {
 
   const [showLoadMore, setShowLoadMore] = useState(true);
 
-  console.log('usersInState->>>>', users);
-  console.log('selectFilteredUsers->>>>> ', users);
-  console.log('pageInState: ', page);
-  console.log('limitInState: ', limit);
-
   useEffect(() => {
     getMoreUsers();
     // eslint-disable-next-line
   }, []);
-
-  // useEffect(() => {
-  //   // Этот эффект выполнится каждый раз при изменении состояния cards
-  //   if (users.length > 0) {
-  //     window.scrollTo({
-  //       top: document.documentElement.scrollHeight,
-  //       behavior: 'smooth', // Плавная прокрутка
-  //     });
-  //   }
-  // }, [users]); // Зависимость от массива карточек
 
   const getMoreUsers = () => {
     if (!isAll) {
@@ -41,10 +26,8 @@ const Home = () => {
         .then(() => {
           window.scrollTo({
             top: document.documentElement.scrollHeight,
-            behavior: 'smooth', // Плавная прокрутка
+            behavior: 'smooth',
           });
-          console.log('page Before Check: ', page + 1);
-          console.log('limit Before Check: ', limit);
           dispatch(checkLastPage({ page: page + 1, limit }));
         });
     }
